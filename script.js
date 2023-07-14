@@ -1,8 +1,11 @@
+// create class
 class Car{
+    // constructor of class
     constructor(name, year){
         this.name = name,
         this.year = year
     }
+    // class method
     age(x){
         console.log('name in constructor '+ x)
         console.log(x, '  x')
