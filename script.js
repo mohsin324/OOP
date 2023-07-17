@@ -98,14 +98,77 @@
 // console.log(newCar.carBrand, ' car brand')
 
 // static class
-class Car {
-    constructor(name){
-        this.name = name
-    }
-    static hello(){
-        return 'Hello'+ this.name
-    }
+// class Car {
+//     constructor(name, color){
+//         this.name = name
+//         this.color = color
+
+//     }
+//      hello(){
+//         return ' Hello '+ this.name +' color '+this.color
+//     }
+// }
+
+// const myCar = new Car('Ford', 'white');
+// const myCar1 = new Car('Stonic', 'yellow');
+// console.log(myCar.hello(), ' my car');
+// console.log(myCar1, ' my car 1')
+
+// Method Chaining
+// class User {
+//     constructor(email, name){
+//         this.email = email;
+//         this.name = name;
+//         this.score = 0;
+//     }
+//     login(){
+//         console.log(this.email +' just login '+ this.name)
+//         // return this.email+' my email this.email '
+//         return this //this.email +' just login '+ this.name
+//     }
+//     logOut() {
+//         console.log(this.email +' just logOut '+ this.name)
+//         return this// this.email +' just logOut '+ this.name
+//     }
+//     updateScore() {
+//         this.score ++;
+//         console.log(this.email, ' score is now ', this.score)
+//         return this // this.score ++
+//     }
+// }
+// // inheritance
+// class Admin extends User{
+//     deleteUser(user){
+//         user.forEach(users => {
+//             console.log(users, ' users ')
+//         })
+//     }
+// }
+// const newAdmin = new Admin('inheritace@gmail.com', 'inheritance');
+// const UserOne = new User('abc@gmail.com', 'yushi');
+// // method chaining
+// // UserOne.login().updateScore().updateScore().logOut()
+
+// const user = [UserOne, newAdmin ]
+// let nn = newAdmin.deleteUser(user)
+
+
+///////Prototype
+function User(email, name){
+    this.email = email;
+    this.name = name
+    this.online = false;
+}
+User.prototype.login = function (){
+    this.online = true;
+    console.log(this.email + ' user login '+ this.online)
+}
+User.prototype.logout = function (){
+    console.log(this.email + ' user login '+ this.online)
 }
 
-const myCar = new Car('Ford');
-console.log('myCar '+ JSON.stringify(myCar))
+const userOne = new User('abc@gmail.com', 'yushi')
+const userTwo = new User('xyz@gmail.com', 'mario')
+
+userOne.login()
+userTwo.logout()
